@@ -1,0 +1,104 @@
+/* ==== Meyer Reset.scss ==== */
+
+@import 'meyer-reset';
+
+/* ==== Meyer Reset.scss END ==== */
+
+$equ: 100% / 12;
+.layout {
+    height: 35px;
+    background: #ccc;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+    float: left;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+}
+
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    @media screen and (min-width: 34em) {
+        width: 540px;
+        max-width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    // Medium. Above 48em (768px)
+    @media screen and (min-width: 48em) {
+        width: 720px;
+        max-width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    // Large. Above 62em (992px)
+    @media screen and (min-width: 62em) {
+        width: 960px;
+        max-width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    // Extra large. Above 75em (1200px)
+    @media screen and (min-width: 75em) {
+        width: 1140px;
+        max-width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.container-fluid {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    
+}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+$max: 12;
+%col-defaults {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin col-list {
+    @for $m from 1 through $max {
+        .col-#{$m} {
+            @extend %col-defaults;
+        }
+    }
+}
+
+@include col-list;
+@for $i from 1 through $max {
+    $equ: 100% / $i;
+    .col-#{$i} {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 $equ;
+        -ms-flex: 0 0 $equ;
+        flex: 0 0 $equ;
+        max-width: $equ;
+    }
+}
