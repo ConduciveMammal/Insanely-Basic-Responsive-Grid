@@ -23,15 +23,15 @@ A column must be contained within a row, and a row must be contained in either a
 ```html
 <div class="container">
 	<div class="row">
-    	<div class="col-2">
-        	First of two columns
-        </div>
-        <div class="col-2">
-        	Second of two columns
-        </div>
-    </div>
+		<div class="col-2">
+			First of two columns
+		</div>
+		<div class="col-2">
+			Second of two columns
+		</div>
+	</div>
 </div>
 ```
 The `.layout` class is irrelevant to the grid or any of the layout, it's simply there to use for inital development for some column height and background colour.
 
-Columns don't yet break down on mobile, this on the "to-do" list.
+Columns don't yet break down on mobile, this is on the "to-do" list.
